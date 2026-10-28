@@ -7,5 +7,17 @@
 <body>
     <h1>Home Page</h1>
     Hello <%= name %>
+
+
+    <% if (age>18) { %>
+
+        <p>Eligible to Vote</p>
+    
+    <% } else { %>
+
+        <p>Not Eligible to Vote</p>
+
+    <% } %>
+
 </body>
 </html>

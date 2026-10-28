@@ -1,7 +1,9 @@
 import express from "express"
+import expressLayouts from "express-ejs-layouts";
 
 const app = express()
-
+app.use(expressLayouts)
+app.set("layout","layout")
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs")
@@ -26,7 +28,7 @@ app.get("/products", (req, res) => {
 })
 
 app.get("/", (req, res) => {
-    res.render("home",{name:"John"})
+    res.render("home",{name:"John",age:21})
 })
 
 app.listen(9090, () => console.log("Server started"))
